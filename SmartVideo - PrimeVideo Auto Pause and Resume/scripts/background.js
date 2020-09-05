@@ -18,7 +18,7 @@ function resumeMediaInTab(tab) {
 
 function pauseMediaInTab(tab) {
 	
-	if(tab && tab.url) {
+	if(!chrome.runtime.lastError && tab && tab.url) {
 		chrome.storage.sync.get([sitesKey], function(result) {
 			let tabHostname = new URL(tab.url).hostname;
 
