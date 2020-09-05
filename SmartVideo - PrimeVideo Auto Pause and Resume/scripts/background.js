@@ -36,13 +36,11 @@ function activatedTabHandler(activeInfo) {
 	currentTabID = activeInfo.tabId;
 }
 
+chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+	currentTabID = tabs[0].id;
+});
 
 chrome.runtime.onInstalled.addListener(function() {
-
-	chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-		currentTabID = tabs[0].id;
-	});
-
 	chrome.storage.sync.set({autoPauseSites: ['www.primevideo.com']});
 });
 
