@@ -43,6 +43,7 @@ chrome.runtime.onInstalled.addListener(function() {
 		currentTabID = tabs[0].id;
 	});
 
-	chrome.storage.sync.set({autoPauseSites: ['www.primevideo.com']});	
-	chrome.tabs.onActivated.addListener(activatedTabHandler);
+	chrome.storage.sync.set({autoPauseSites: ['www.primevideo.com']});
 });
+
+chrome.tabs.onActivated.addListener(activatedTabHandler);
