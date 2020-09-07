@@ -1,6 +1,5 @@
-let currentTabID;
-
 const sitesKey = 'autoPauseSites';
+const currentTabKey = 'currentTabID';
 
 function resumeMediaInTab(tab) {
 	
@@ -31,17 +30,17 @@ function pauseMediaInTab(tab) {
 
 function activatedTabHandler(activeInfo) {
 	chrome.tabs.get(activeInfo.tabId, resumeMediaInTab);
-	chrome.tabs.get(currentTabID, pauseMediaInTab);
-
-	currentTabID = activeInfo.tabId;
+	chrome.storage.local.get([currentTabKey], function(result) {
+		chrome.tabs.get(result.currentTabID, pauseMediaInTab);
+		chrome.storage.local.set({ currentTabID: activeInfo.tabId });
+	});
 }
-
-chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-	currentTabID = tabs[0].id;
-});
 
 chrome.runtime.onInstalled.addListener(function() {
 	chrome.storage.sync.set({autoPauseSites: ['www.primevideo.com']});
+	chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+		chrome.storage.local.set({ currentTabID: tabs[0].id });
+	});
 });
 
 chrome.tabs.onActivated.addListener(activatedTabHandler);

@@ -1,6 +1,6 @@
 {
     "name": "SmartVideo - PrimeVideo Auto Pause and Resume",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Automatically pauses PrimeVideo.com when you switch to another tab and resumes when you switch back.",
 	"permissions": ["tabs", "storage"],
 	"background": {
