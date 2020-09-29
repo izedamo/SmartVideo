@@ -37,7 +37,7 @@ function activatedTabHandler(activeInfo) {
 }
 
 chrome.runtime.onInstalled.addListener(function() {
-	chrome.storage.sync.set({autoPauseSites: ['www.primevideo.com']});
+	chrome.storage.sync.set({autoPauseSites: ['www.primevideo.com', 'www.youtube.com', 'www.netflix.com']});
 	chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
 		chrome.storage.local.set({ currentTabID: tabs[0].id });
 	});
