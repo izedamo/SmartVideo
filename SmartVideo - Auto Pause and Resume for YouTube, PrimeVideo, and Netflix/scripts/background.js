@@ -5,7 +5,6 @@ function resumeMediaInTab(tab) {
 	
 	if(tab && tab.url) {
 		chrome.storage.sync.get([sitesKey], function(result) {
-			//console.log(result.autoPauseSites);
 			let tabHostname = new URL(tab.url).hostname;
 
 			if(result.autoPauseSites.includes(tabHostname)) {

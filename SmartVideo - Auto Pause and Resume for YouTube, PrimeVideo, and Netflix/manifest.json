@@ -1,7 +1,7 @@
 {
-    "name": "SmartVideo - Auto Pause and Resume for YouTube, PrimeVideo, and Netflix.",
+    "name": "SmartVideo - AutoPause for YouTube, PrimeVideo, and Netflix.",
     "version": "2.0.0",
-    "description": "Automatically pauses playing videos on YouTube, PrimeVideo, and Netflix when you switch to another tab and resumes when you switch back.",
+    "description": "Automatically pauses videos on YouTube, PrimeVideo, and Netflix when you switch to another tab and resumes when you switch back.",
 	"permissions": ["tabs", "storage"],
 	"background": {
       "scripts": ["scripts/background.js"],
