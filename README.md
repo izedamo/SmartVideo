@@ -3,4 +3,4 @@ A chrome extension that automatically pauses YouTube, PrimeVideo.com, and Netfli
 
 All trademarks are copyright of their respective owners.
 
-License located here: https://github.com/izedamo/SmartVideo/blob/master/SmartVideo%20-%20PrimeVideo%20Auto%20Pause%20and%20Resume/LICENSE
+License: MIT
